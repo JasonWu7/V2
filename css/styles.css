@@ -1,0 +1,84 @@
+#choropleth_map {
+	width: 100%;
+	height: 30rem;
+	padding-bottom: 3rem;
+	padding-left: 2rem;
+}
+.main{
+	margin: 2rem;
+}
+
+.vg-tooltip {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+  
+  .vg-tooltip .key {
+	color: black !important;
+	display: inline;
+	white-space: normal;
+	overflow: visible;
+	text-overflow: initial;
+	max-width: none;
+  }
+  
+  .vg-tooltip .value {
+	font-weight:bold;
+	display: inline;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	color: #1961aa;
+  }
+.vega-bindings {
+  position: absolute,
+}
+
+body {
+    background-color: rgb(249,233,220) !important;
+	display: flex;
+	justify-content: center;
+    align-items: flex-start;
+	flex-direction: column;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 30px;
+	padding: 1rem;
+	margin-top: 1rem;
+	display: flex;
+    flex-direction: column;
+}
+
+#title {
+	font-family: 'Gluten', cursive;
+	font-size: 40px;
+	font-weight: bolder;
+	color: #5B484E;
+	text-align: center;
+}
+
+.intro {
+	font-size: 17px;
+	font-family: 'Salsa', cursive;
+	text-align: left;
+	padding-left: 1rem;
+}
+
+.heading{
+	font-family: 'Salsa', cursive;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: left;
+	padding-top: 1rem;
+	padding-left: 1rem;
+	color: #5B484E;
+}
+
+
+/* font-family: 'Gluten', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Salsa', cursive; */
