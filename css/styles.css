@@ -78,6 +78,19 @@ body {
 	color: #5B484E;
 }
 
+.pictorial_fraction_chart {
+	width: 18%;
+}
+
+.gender_fraction {
+	width: 25%;
+	margin-left: 7rem;
+}
+
+#graph_title {
+	padding-left: 4rem;
+	font-size: small;
+}
 
 /* font-family: 'Gluten', cursive;
 font-family: 'Open Sans', sans-serif;

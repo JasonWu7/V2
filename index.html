@@ -59,10 +59,10 @@
                     <br/><br/>
                     <strong>As of 2017</strong>, the global population affected by mental health issues reached a staggering <strong>801,321,216</strong> people, 
                     and mental health problems are prevalent in countries worldwide. <br/><br/>From the map, 
-                    it is evident that countries like China, the United States, and India have significantly higher 
+                    it is evident that countries like <strong>China, the United States, and India</strong> have significantly higher 
                     numbers of mental health issue patients compared to other countries. 
-                    <br/<em>(Note: The visualization data has been standardized, so the number of patients is not directly 
-                    related to the total population of each country.)</em> <br/><br/>Equally noteworthy is that Greenland has much 
+                    <br/><em>(Note: The visualization data has been standardized, so the number of patients is not directly 
+                    related to the total population of each country.)</em> <br/><br/>Equally noteworthy is that <strong>Greenland</strong> has much 
                     lower numbers of mental health issue patients compared to almost all other countries.
                 </div>
               </div>
@@ -71,14 +71,64 @@
                     The global number of individuals with mental disorders amounts to <strong>10.6%</strong> of the world's total population, 
                     meaning that <strong>one in every ten</strong> people has experienced or is currently experiencing challenges related to mental health.
                 </div>
-                <div id="pictorial_fraction_chart"></div>
+                <br/>
+                <img src="./asset/b.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+                <img src="./asset/a.png" alt="" class="pictorial_fraction_chart">
+
+                <div class="intro" id="graph_title">
+                    <em>Pictorial fraction on proportion of patients</em>
+                </div>
+
+                <br/><br/>
+                <div class="intro">
+                    In extensive research within the field of mental health, a common phenomenon emerges: <strong>women are more prone to mental 
+                    health issues than men</strong>. This phenomenon is also evident in our data.
+                </div>
+
+
               </div>
               <div class="col">
-                3 of 3
+                <div class="intro">
+                    This phenomenon is attributed to complex factors, such as biological elements, differences in the physiological makeup of 
+                    males and females, the impact of hormonal fluctuations on emotions and mental health. For instance, psychological 
+                    factors play a role, as women tend to be more emotionally oriented, and social factors, 
+                    such as gender inequality in certain regions, also contribute to this trend.
+                </div>
+                
+                <img src="./asset/c.png" alt="" class="gender_fraction"> <strong>2.73%</strong>
+                <br/>
+                <img src="./asset/d.png" alt="" class="gender_fraction"> <strong>4.12%</strong>
+
+                <div class="intro" id="graph_title">
+                    <em>Prevalence in males and females</em>
+                </div>
+
+                
               </div>
            
         
         </div>
+        <hr>
+        <div class="intro">
+            Let's delve deeper into the data.
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="heading">
+            Comparison
+        </div>
+        <hr/>
     </div>
 
 
@@ -88,9 +138,6 @@
     vegaEmbed('#choropleth_map', choropleth_spec).then(function (result) {
     }).catch(console.error);
 
-    var pictorial_fraction_chart_spec = "./js/pictorial_fraction_chart.vg.json";
-    vegaEmbed('#pictorial_fraction_chart', pictorial_fraction_chart_spec).then(function (result) {
-    }).catch(console.error);
 </script>
 
 </html>
