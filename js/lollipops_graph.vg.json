@@ -1,0 +1,156 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": {
+        "signal": " 'Top 10 countries with most of ' + replace(select_category, ' (%)', '') + ' Patients (Year: ' + select_year + ')' "
+      },
+      "subtitle": ""
+    },
+    "config": {
+        "background": "transparent"
+      },
+      "width": "container",
+      "height": "container",
+    "params": [
+      {
+        "name": "select_year", "value": 2017,
+        "bind": { "input": "range", "min": 1990, "max": 2017, "step": 1, "name": "Select Year: " }
+      },
+      {
+        "name": "select_category",
+        "value": "Schizophrenia (%)",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Schizophrenia (%)",
+            "Bipolar disorder (%)",
+            "Eating disorders (%)",
+            "Anxiety disorders (%)",
+            "Drug use disorders (%)",
+            "Depression (%)",
+            "Alcohol use disorders (%)"
+          ],
+          "labels": [
+            "Schizophrenia",
+            "Bipolar disorder",
+            "Eating disorders",
+            "Anxiety disorders",
+            "Drug use disorders",
+            "Depression",
+            "Alcohol use disorders"
+          ],
+          "name": "Select Category: "
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/JasonWu7/w9/main/data/combined_dataset_1_2.csv"
+    },
+    "transform": [
+      { "filter": "datum.Year == select_year" },
+      { "filter": "datum.Entity != 'World'" },
+      { "filter": "datum[select_category]* datum['Population'] / 10000 > 0" },
+      {
+        "calculate": "datum[select_category] * datum['Population'] / 10000",
+        "as": "num_patient_per_10k"
+      },
+      { "window": [{ "op": "rank", "as": "rank" }], "sort": [{ "field": "num_patient_per_10k", "order": "descending" }] },
+      { "filter": "(datum.rank <= 10)" }
+    ],
+    "layer": [
+      {
+        "description": "Lollipop Stick",
+        "transform": [
+          { "filter": "datum.Year == select_year" },
+          {
+            "calculate": "datum[select_category] * datum['Population'] / 10000",
+            "as": "num_patient_per_10k"
+          }
+        ],
+        "mark": { "type": "bar", "cornerRadiusEnd": 2, "height": { "band": 0.05 } },
+        "encoding": {
+          "x": {
+            "field": "num_patient_per_10k",
+            "title": "Number of Patient per 10k Population",
+            "type": "quantitative",
+            "scale": {
+              "type": "linear"
+            }
+          },
+          "y": {
+            "field": "Entity",
+            "title": "Country",
+            "sort": "num_patient_per_10k"
+          },
+          "color": {
+            "value": "Grey"
+          },
+          "tooltip": [
+            { "field": "Entity", "type": "nominal", "title": "Country" },
+            { "field": "num_patient_per_10k", "type": "quantitative", "format": ",.0f", "title": "Number of patients per 10,000 population" }
+          ]
+        }
+      },
+      {
+        "description": "Lollipop",
+        "transform": [
+          { "filter": "datum.Year == select_year" },
+          {
+            "calculate": "datum[select_category] * datum['Population'] / 10000",
+            "as": "num_patient_per_10k"
+          }
+        ],
+        
+        "encoding": {
+          "color": {
+            "value": "#08B2E3"
+          },
+          "x": {
+            "field": "num_patient_per_10k",
+            "type": "quantitative",
+            "scale": {
+              "type": "linear"
+            }
+          },
+          "y": {
+
+            "field": "Entity",
+            "sort": "-x"
+
+          },
+          "tooltip": [
+            { "field": "Entity", "type": "nominal", "title": "Country" },
+            { "field": "num_patient_per_10k", "type": "quantitative", "format": ",.0f", "title": "Number of patients per 10,000 population" }
+          ]
+        },
+        "layer":[
+          {"mark": {
+          "type": "circle",
+          "size": 100,
+          "tooltip": true
+        }},{
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "middle",
+          "dy": 10,
+          "dx": -50,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": { "field": "num_patient_per_10k", "format": ",.0f", "type": "quantitative" },
+          "color": { "value": "black" },
+          "opacity": {
+            "condition": {
+              "test": "datum.rank <= 5",
+              "value": 1
+            },
+            "value": 0
+          }
+        }
+      }]
+      }
+      
+    ]
+  }
