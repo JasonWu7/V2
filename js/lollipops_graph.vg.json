@@ -49,9 +49,9 @@
     "transform": [
       { "filter": "datum.Year == select_year" },
       { "filter": "datum.Entity != 'World'" },
-      { "filter": "datum[select_category]* datum['Population'] / 10000 > 0" },
+      { "filter": "datum[select_category] * datum['Population'] / 100 / datum['Population'] * 10000 > 0" },
       {
-        "calculate": "datum[select_category] * datum['Population'] / 10000",
+        "calculate": "datum[select_category] * datum['Population'] / 100 / datum['Population'] * 10000",
         "as": "num_patient_per_10k"
       },
       { "window": [{ "op": "rank", "as": "rank" }], "sort": [{ "field": "num_patient_per_10k", "order": "descending" }] },
@@ -63,7 +63,7 @@
         "transform": [
           { "filter": "datum.Year == select_year" },
           {
-            "calculate": "datum[select_category] * datum['Population'] / 10000",
+            "calculate": "datum[select_category] * datum['Population'] / 100 / datum['Population'] * 10000",
             "as": "num_patient_per_10k"
           }
         ],
@@ -96,7 +96,7 @@
         "transform": [
           { "filter": "datum.Year == select_year" },
           {
-            "calculate": "datum[select_category] * datum['Population'] / 10000",
+            "calculate": "datum[select_category] * datum['Population'] / 100 / datum['Population'] * 10000",
             "as": "num_patient_per_10k"
           }
         ],
@@ -143,7 +143,7 @@
           "color": { "value": "black" },
           "opacity": {
             "condition": {
-              "test": "datum.rank <= 5",
+              "test": "datum.rank <= 10",
               "value": 1
             },
             "value": 0

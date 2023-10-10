@@ -93,7 +93,7 @@
         },
         { "filter": "datum.Year == select_year" },
         {
-          "calculate": "datum[select_category] * datum['Population'] / 10000",
+          "calculate": "datum[select_category] * datum['Population'] / 100 / datum['Population'] * 10000",
           "as": "num_patient_per_10k"
         }
       ],
@@ -104,8 +104,7 @@
           "field": "num_patient_per_10k",
           "type": "quantitative",
           "scale": {
-            "type": "log",
-            "domain": [1, 10, 100, 1000, 10000, 100000]
+            "type": "log"
           },
           "legend": { "title": "Number of patients per 10,000 population", "titleLimit": "250", "offset": -150 }
         },

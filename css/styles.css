@@ -11,6 +11,11 @@
 	padding-left: 2rem;
 }
 
+#bar_chart{
+	width: 100%;
+	height: 28rem;
+}
+
 #isotype_grid{
 	width: 100%;
 	height: 14.5rem;
@@ -19,7 +24,6 @@
 #prevalence_percentage{
 	width: 80%;
 	height: 18rem;
-	padding-top: 2rem;
 }
 
 .main{

@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-      "text": "Prevalence in male and female",
+      "text": "Prevalence in female and male",
       "dx": 50
     },
   "config": {"view": {"stroke": ""}, "background": "transparent"},
