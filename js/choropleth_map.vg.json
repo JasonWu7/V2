@@ -106,7 +106,7 @@
           "scale": {
             "type": "log"
           },
-          "legend": { "title": "Number of patients per 10,000 population", "titleLimit": "250", "offset": -150 }
+          "legend": { "format": ".2s", "title": "Number of patients per 10,000 population", "titleLimit": "250", "offset": -150 }
         },
         "tooltip": [
           { "field": "Entity", "type": "nominal", "title": "Country" },

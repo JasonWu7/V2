@@ -5,6 +5,11 @@
 	padding-left: 2rem;
 }
 
+#multi_map {
+	width: 100%;
+	padding-left: 2rem;
+}
+
 #lollipops_graph{
 	width: 100%;
 	height: 25rem;
