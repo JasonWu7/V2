@@ -96,7 +96,9 @@
           "align": "right",
           "baseline": "bottom",
           "x": "width",
-          "y": 20
+          "y": 20,
+          "fontSize": 15,
+          "fontWeight":"bold"
         },
         "encoding": {"text": {"field": {"repeat": "repeat"}}}
       }
