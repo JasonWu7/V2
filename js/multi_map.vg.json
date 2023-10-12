@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global statistics on the number of mental health disorders patients (1990-2017)",
+  "title": "Global statistics on the number of mental health disorders patients (Year: 1990-2017)",
   "repeat": ["1990", "2000", "2010", "2017"],
   "columns": 2,
   "background": "transparent",
@@ -8,8 +8,8 @@
     "projection": {
       "type": "equirectangular"
     },
-    "width": 600,
-    "height": 300,
+    "width": 480,
+    "height": 250,
     "layer": [
       {
         "data": {

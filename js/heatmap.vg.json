@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap of Suicide Rate vs. Depressive Disorder Rates",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JasonWu7/V2/main/data/dataset3.csv"
+    },
+    "background": "transparent",
+    "width": "container",
+    "height": "container",
+    "title": "Depressive rate against suicide rate (Year: 1990-2017)",
+  "transform": [{
+    "filter": {"and": [
+      {"field": "Depressive disorder rates (number suffering per 100,000)", "valid": true},
+      {"field": "Suicide rate (deaths per 100,000 individuals)", "valid": true}
+    ]}
+  },{ "filter": "datum.Entity != 'World'" }],
+      "mark": "rect",
+      "encoding": {
+        "x": {
+            "bin": {"maxbins":10},
+          "field": "Suicide rate (deaths per 100,000 individuals)",
+          "type": "ordinal",
+          "title": "Suicide rate (per 100,000 individuals)"
+        },
+        "y": {
+            "bin": {"maxbins":10},
+
+          "field": "Depressive disorder rates (number suffering per 100,000)",
+          "type": "quantitative",
+          "title": "Depressive disorder rate (per 100,1000 individuals)"
+        },
+        "color": {
+        "aggregate": "count",
+          "type": "quantitative",
+          "scale": { "range": ["#08B2E3", "#0568AA", "#045A92"] }
+        }
+      }
+    }
+  

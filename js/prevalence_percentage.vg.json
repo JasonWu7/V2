@@ -2,7 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
       "text": "Prevalence in female and male",
-      "dx": 50
+      "dx": 20,
+      "limit": 200
     },
   "config": {"view": {"stroke": ""}, "background": "transparent"},
   "width": "container",
@@ -18,7 +19,7 @@
     {"calculate": "datum.id - (datum.col - 1) * 5", "as": "position"}
   ],
   "layer":[
-    {"mark": {"type": "point", "filled": true},
+    {"mark": {"type": "point", "filled": true, "xOffset": -30},
     "encoding": {
       "x": {"field": "position", "type": "ordinal", "axis": null},
       "y": {"field": "row", "type": "ordinal", "axis": null},

@@ -4,7 +4,8 @@
       "text": {
         "signal": " 'Top 10 countries with most of ' + replace(select_category, ' (%)', '') + ' Patients (Year: ' + select_year + ')' "
       },
-      "subtitle": ""
+      "subtitle": "",
+      "dx": -40
     },
     "config": {
         "background": "transparent"

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "One in ten people experiencing mental health issues"
+        "text": "Averange prevalence"
       },
     "config": {"view": {"stroke": ""}, "background": "transparent"},
     "width": "container",

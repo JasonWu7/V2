@@ -1,6 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Bar chart with text labels. Set domain to make the frame cover the labels.",
+    "title": {
+      "text": "Total number of patients with different categories (Year: 2017)",
+      "dx": -30
+    },
     "data": {
         "url": "https://raw.githubusercontent.com/JasonWu7/V2/main/data/extracted_world_data.csv"
     },

@@ -31,16 +31,7 @@
             Mental Health Disorders and Depression Data Statistics
         </div>
         <div class="intro">
-            <strong>Mental Health Disorders and Depression</strong>
-            are critical aspects of the human experience that significantly impact individuals' lives, affecting their
-            emotional and psychological well-being. These conditions encompass a wide range of mental health challenges,
-            each with its unique characteristics and effects. <strong>Understanding these issues is essential to provide
-                support,
-                reduce stigma, and improve the overall mental health of individuals and communities.</strong>
-            <br /><br />The visualized data is sourced from <strong>Kaggle</strong> and presents data on patients with
-            mental health
-            issues from different
-            countries from <strong>1990 to 2017</strong>.
+            
         </div>
     </div>
 
@@ -49,6 +40,28 @@
             Global Overview
         </div>
         <hr />
+        <div class="row">
+            <div class="col">
+                <div class="intro">
+                    <strong>Mental Health Disorders and Depression</strong>
+            are critical aspects of the human experience that significantly impact individuals' lives, affecting their
+            emotional and psychological well-being. These conditions encompass a wide range of mental health challenges,
+            each with its unique characteristics and effects. 
+                </div>
+            </div>
+            <div class="col">
+                <div class="intro">
+                    <strong>Understanding these issues is essential to provide
+                        support,
+                        reduce stigma, and improve the overall mental health of individuals and communities.</strong>
+                        The visualized data is sourced from <strong>Kaggle</strong> and presents data on patients with
+            mental health
+            issues from different
+            countries from <strong>1990 to 2017</strong>.
+                </div>
+            </div>
+        </div>
+        <hr/>
         <div class="row">
             <div id="choropleth_map"></div>
         </div>
@@ -118,25 +131,33 @@
         </div>
         
         <hr>
-        <div class="row">
+        <div class="row" style="justify-content: center;">
             <div id="multi_map"></div>
         </div>
-
-            <div class="intro" style="margin-left: 0.7rem;">
-                You may be puzzled by the trend chart above, but as the information displayed on the chart indicates, for 
-                most countries, <strong>the proportion of patients with mental health problems has not increased with the growth of 
-                years and population. Instead, it remains in a fluctuating state.</strong> The factors behind this are intricate and complex.
-
-                The reasons for reducing the number of patients include improved living conditions brought about by economic and 
-                technological development, a growing global focus on mental health issues, and the provision of relevant support. 
-                On the other hand, the reasons for increasing the number of patients include work-related stress caused by 
-                intensifying competition and a greater awareness of mental health issues, leading more people to seek help and 
-                provide more data for recording.
-
-                In conclusion, the influencing factors can be diverse, including factors such as war, economy, environment, 
-                cultural background, and natural disasters, all of which have the potential to affect the fluctuation in the 
-                number of individuals with mental health issues.
+        <div class="row">
+            <div class="col">
+                <div class="intro" style="margin-left: 0.7rem;">
+                    You may be puzzled by the trend chart above, but as the information displayed on the chart indicates, for 
+                    most countries, <strong>the proportion of patients with mental health problems has not increased with the growth of 
+                    years and population. Instead, it remains in a fluctuating state.</strong> The factors behind this are intricate and complex.
+                    The reasons for reducing the number of patients include improved living conditions brought about by economic and 
+                    technological development, a growing global focus on mental health issues, and the provision of relevant support.
+                </div>
+                
             </div>
+            <div class="col">
+                <div class="intro">
+                    On the other hand, the reasons for increasing the number of patients include work-related stress caused by 
+                    intensifying competition and a greater awareness of mental health issues, leading more people to seek help and 
+                    provide more data for recording.
+    
+                    <br/>
+                    In conclusion, the influencing factors can be diverse, including factors such as war, economy, environment, 
+                    cultural background, and natural disasters, all of which have the potential to affect the fluctuation in the 
+                    number of individuals with mental health issues.
+                </div>
+            </div>
+        </div>
 
         <hr>
         <div class="intro">
@@ -199,6 +220,7 @@
             </div>
             <div class="col">
                 <div id="bar_chart"></div>
+                <br/><br/>
                 <div class="intro">
                     Although certain categories may involve more severe symptoms, no mental health problem, no matter how small, 
                     should be ignored. They can impair concentration, induce feelings of pessimism, negativity, and even lead to 
@@ -207,6 +229,29 @@
             </div>
         </div>
         <hr/>
+
+        <div class="row">
+            <div id="heatmap"></div>
+        </div>
+
+        <br/><br/>
+
+        <div class="row">
+            <div class="col">
+                <div class="intro">
+                    As mentioned earlier, mental health issues can lead to a tendency towards suicide. This statement is 
+                    confirmed by the chart above, which shows that <strong>high suicide rates are often associated with a higher 
+                    incidence of depressive disorders</strong>. 
+                </div>
+            </div>
+            <div class="col">
+                <div class="intro">
+                    The trend in the chart reflects a <strong>proportional relationship</strong> between 
+                    suicide rates and the incidence of depressive disorders. However, overall, the majority of the records 
+                    maintain a moderate to low level of both suicide rates and depressive disorder incidence.
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -234,6 +279,10 @@
 
     var multi_map_spec = "./js/multi_map.vg.json";
     vegaEmbed('#multi_map', multi_map_spec).then(function (result) {
+        }).catch(console.error);
+
+    var heatmap_spec = "./js/heatmap.vg.json";
+    vegaEmbed('#heatmap', heatmap_spec).then(function (result) {
         }).catch(console.error);
 
 </script>

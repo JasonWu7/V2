@@ -6,19 +6,25 @@
 }
 
 #multi_map {
-	width: 100%;
-	padding-left: 2rem;
+	width: auto;
+	padding: 0;
 }
 
 #lollipops_graph{
 	width: 100%;
-	height: 25rem;
+	height: 28rem;
 	padding-left: 2rem;
+	padding-right: 0;
 }
 
 #bar_chart{
 	width: 100%;
 	height: 28rem;
+}
+
+#heatmap{
+	width: 100%;
+	height: 25rem;
 }
 
 #isotype_grid{
@@ -27,7 +33,7 @@
 }
 
 #prevalence_percentage{
-	width: 80%;
+	width: 100%;
 	height: 18rem;
 }
 
@@ -78,11 +84,12 @@ body {
 	margin-top: 1rem;
 	display: flex;
     flex-direction: column;
+	width: 70% !important;
 }
 
 #title {
 	font-family: 'Gluten', cursive;
-	font-size: 40px;
+	font-size: 45px;
 	font-weight: bolder;
 	color: #5B484E;
 	text-align: center;
