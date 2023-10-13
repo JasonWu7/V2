@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/JasonWu7/w9/main/data/combined_dataset_1_2.csv"},
+  "width": "container", 
+  "height": "container",
+  "title": {
+    "text": "Global prevalence of different categories (Year: 1990-2017)",
+    "dy": -30
+  },
+  "mark": "area",
+  "background": "transparent",
+  "transform": [
+    {"filter": "datum.Entity == 'World'"},
+    {"fold": ["Schizophrenia (%)", "Bipolar disorder (%)", "Eating disorders (%)", "Anxiety disorders (%)", "Drug use disorders (%)", "Depression (%)", "Alcohol use disorders (%)"], "as": ["category", "Percentage"]},
+    {
+      "calculate": "replace(datum.category, ' (%)', '')",
+      "as": "category_label"
+    },
+    {
+      "calculate": "format(datum.Percentage, '.2f') + '%'",
+      "as": "PercentageLabel"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year"
+    },
+    "y": {"aggregate": "sum", "field": "Percentage", "title": "Percentage (%)"},
+
+    "color": {"field":"category_label", "scale":{"scheme": "accent"}, "legend": {"title": "Category", "rowPadding": 30, "titlePadding": 20} },
+    "tooltip": [
+      { "field": "category_label", "type": "nominal", "title": "Category" },
+      { "field": "PercentageLabel", "type": "nominal", "title": "Percentage" }
+    ]
+  }
+}

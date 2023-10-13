@@ -17,7 +17,7 @@
       "mark": "rect",
       "encoding": {
         "x": {
-            "bin": {"maxbins":10},
+            "bin": {"maxbins":20},
           "field": "Suicide rate (deaths per 100,000 individuals)",
           "type": "ordinal",
           "title": "Suicide rate (per 100,000 individuals)"
