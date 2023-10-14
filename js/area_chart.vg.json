@@ -29,6 +29,7 @@
 
     "color": {"field":"category_label", "scale":{"scheme": "accent"}, "legend": {"title": "Category", "rowPadding": 30, "titlePadding": 20} },
     "tooltip": [
+      { "field": "Year", "type": "nominal", "title": "Year" },
       { "field": "category_label", "type": "nominal", "title": "Category" },
       { "field": "PercentageLabel", "type": "nominal", "title": "Percentage" }
     ]
